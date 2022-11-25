@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 class LeaguesViewController: UITableViewController {
 	
@@ -17,6 +18,19 @@ class LeaguesViewController: UITableViewController {
 		search.searchBar.placeholder = Constants.Leagues.searchBar_placeholder
 		return search
 	}()
+	
+	private let viewModel: LeaguesViewModel?
+	private var subscribers = Set<AnyCancellable>()
+	
+	init(viewModel: LeaguesViewModel) {
+		self.viewModel = viewModel
+		self.viewModel?.getLeagues()
+		super.init(nibName: nil, bundle: nil)
+	}
+
+	required init?(coder: NSCoder) {
+		fatalError("Not supported!")
+	}
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -29,22 +43,25 @@ class LeaguesViewController: UITableViewController {
 		// Permet de voir la barre de recherche à l'affichage de l'écran
 		self.navigationItem.hidesSearchBarWhenScrolling = false
 		
+		// Object Listner
+		self.viewModel?.objectWillChange
+			.receive(on: DispatchQueue.main)
+			.sink(receiveValue: { [weak self] _ in
+			self?.tableView.reloadData()
+		}).store(in: &self.subscribers)
 	}
 }
 
 // MARK: - TableView Protocoles
 
 extension LeaguesViewController {
-	override func numberOfSections(in tableView: UITableView) -> Int {
-		return 1
-	}
 	
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return 10
+		return self.viewModel?.filtredList?.count ?? 10
 	}
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = UITableViewCell()
-		cell.textLabel?.text = "ligue\(indexPath.row)"
+		cell.textLabel?.text = self.viewModel?.filtredList?[indexPath.row].name
 		return cell
 	}
 	
@@ -59,6 +76,6 @@ extension LeaguesViewController: UISearchResultsUpdating {
 	
 	func updateSearchResults(for searchController: UISearchController) {
 		guard let text = searchController.searchBar.text else { return }
-		print(text)
+		self.viewModel?.filterList(with: text)
 	}
 }

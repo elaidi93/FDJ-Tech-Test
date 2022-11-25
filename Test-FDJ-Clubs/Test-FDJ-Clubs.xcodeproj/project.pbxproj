@@ -18,6 +18,8 @@
 		39CBF8E52931127400175CB7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CBF8E42931127400175CB7 /* Constants.swift */; };
 		39CBF8E929311BF300175CB7 /* LeaguesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CBF8E829311BF300175CB7 /* LeaguesViewModel.swift */; };
 		39CBF8EC2931211300175CB7 /* UIView+ReuseIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CBF8EB2931211300175CB7 /* UIView+ReuseIdentifier.swift */; };
+		39CBF8EF293127A800175CB7 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CBF8EE293127A800175CB7 /* RequestManager.swift */; };
+		39CBF8F229312FF100175CB7 /* League.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CBF8F129312FF100175CB7 /* League.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		39CBF8E42931127400175CB7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		39CBF8E829311BF300175CB7 /* LeaguesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaguesViewModel.swift; sourceTree = "<group>"; };
 		39CBF8EB2931211300175CB7 /* UIView+ReuseIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ReuseIdentifier.swift"; sourceTree = "<group>"; };
+		39CBF8EE293127A800175CB7 /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
+		39CBF8F129312FF100175CB7 /* League.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = League.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,9 +107,11 @@
 		39CBF8AF2931058C00175CB7 /* Test-FDJ-Clubs */ = {
 			isa = PBXGroup;
 			children = (
+				39CBF8F029312FD900175CB7 /* Model */,
+				39CBF8ED2931278E00175CB7 /* Network */,
 				39CBF8EA293120D300175CB7 /* Extentions */,
 				39CBF8E32931126600175CB7 /* Helpers */,
-				39CBF8E1293110CF00175CB7 /* Screens */,
+				39CBF8E1293110CF00175CB7 /* Modules */,
 				39CBF8E02931105400175CB7 /* App */,
 				39CBF8B92931058D00175CB7 /* Assets.xcassets */,
 				39CBF8BE2931058D00175CB7 /* Info.plist */,
@@ -140,12 +146,12 @@
 			path = App;
 			sourceTree = "<group>";
 		};
-		39CBF8E1293110CF00175CB7 /* Screens */ = {
+		39CBF8E1293110CF00175CB7 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
 				39CBF8E2293110EA00175CB7 /* Leagues */,
 			);
-			path = Screens;
+			path = Modules;
 			sourceTree = "<group>";
 		};
 		39CBF8E2293110EA00175CB7 /* Leagues */ = {
@@ -187,6 +193,22 @@
 				39CBF8EB2931211300175CB7 /* UIView+ReuseIdentifier.swift */,
 			);
 			path = Extentions;
+			sourceTree = "<group>";
+		};
+		39CBF8ED2931278E00175CB7 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				39CBF8EE293127A800175CB7 /* RequestManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		39CBF8F029312FD900175CB7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				39CBF8F129312FF100175CB7 /* League.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -321,8 +343,10 @@
 			files = (
 				39CBF8EC2931211300175CB7 /* UIView+ReuseIdentifier.swift in Sources */,
 				39CBF8B52931058C00175CB7 /* LeaguesViewController.swift in Sources */,
+				39CBF8F229312FF100175CB7 /* League.swift in Sources */,
 				39CBF8B12931058C00175CB7 /* AppDelegate.swift in Sources */,
 				39CBF8B32931058C00175CB7 /* SceneDelegate.swift in Sources */,
+				39CBF8EF293127A800175CB7 /* RequestManager.swift in Sources */,
 				39CBF8E929311BF300175CB7 /* LeaguesViewModel.swift in Sources */,
 				39CBF8E52931127400175CB7 /* Constants.swift in Sources */,
 			);
