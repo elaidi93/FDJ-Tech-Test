@@ -9,13 +9,15 @@
 /* Begin PBXBuildFile section */
 		39CBF8B12931058C00175CB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CBF8B02931058C00175CB7 /* AppDelegate.swift */; };
 		39CBF8B32931058C00175CB7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CBF8B22931058C00175CB7 /* SceneDelegate.swift */; };
-		39CBF8B52931058C00175CB7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CBF8B42931058C00175CB7 /* ViewController.swift */; };
-		39CBF8B82931058C00175CB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39CBF8B62931058C00175CB7 /* Main.storyboard */; };
+		39CBF8B52931058C00175CB7 /* LeaguesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CBF8B42931058C00175CB7 /* LeaguesViewController.swift */; };
 		39CBF8BA2931058D00175CB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39CBF8B92931058D00175CB7 /* Assets.xcassets */; };
 		39CBF8BD2931058D00175CB7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39CBF8BB2931058D00175CB7 /* LaunchScreen.storyboard */; };
 		39CBF8C82931058E00175CB7 /* Test_FDJ_ClubsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CBF8C72931058E00175CB7 /* Test_FDJ_ClubsTests.swift */; };
 		39CBF8D22931058E00175CB7 /* Test_FDJ_ClubsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CBF8D12931058E00175CB7 /* Test_FDJ_ClubsUITests.swift */; };
 		39CBF8D42931058E00175CB7 /* Test_FDJ_ClubsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CBF8D32931058E00175CB7 /* Test_FDJ_ClubsUITestsLaunchTests.swift */; };
+		39CBF8E52931127400175CB7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CBF8E42931127400175CB7 /* Constants.swift */; };
+		39CBF8E929311BF300175CB7 /* LeaguesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CBF8E829311BF300175CB7 /* LeaguesViewModel.swift */; };
+		39CBF8EC2931211300175CB7 /* UIView+ReuseIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CBF8EB2931211300175CB7 /* UIView+ReuseIdentifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +41,7 @@
 		39CBF8AD2931058C00175CB7 /* Test-FDJ-Clubs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Test-FDJ-Clubs.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		39CBF8B02931058C00175CB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		39CBF8B22931058C00175CB7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		39CBF8B42931058C00175CB7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		39CBF8B72931058C00175CB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		39CBF8B42931058C00175CB7 /* LeaguesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaguesViewController.swift; sourceTree = "<group>"; };
 		39CBF8B92931058D00175CB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		39CBF8BC2931058D00175CB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		39CBF8BE2931058D00175CB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +50,9 @@
 		39CBF8CD2931058E00175CB7 /* Test-FDJ-ClubsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Test-FDJ-ClubsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		39CBF8D12931058E00175CB7 /* Test_FDJ_ClubsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test_FDJ_ClubsUITests.swift; sourceTree = "<group>"; };
 		39CBF8D32931058E00175CB7 /* Test_FDJ_ClubsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test_FDJ_ClubsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		39CBF8E42931127400175CB7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		39CBF8E829311BF300175CB7 /* LeaguesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaguesViewModel.swift; sourceTree = "<group>"; };
+		39CBF8EB2931211300175CB7 /* UIView+ReuseIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ReuseIdentifier.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,12 +103,11 @@
 		39CBF8AF2931058C00175CB7 /* Test-FDJ-Clubs */ = {
 			isa = PBXGroup;
 			children = (
-				39CBF8B02931058C00175CB7 /* AppDelegate.swift */,
-				39CBF8B22931058C00175CB7 /* SceneDelegate.swift */,
-				39CBF8B42931058C00175CB7 /* ViewController.swift */,
-				39CBF8B62931058C00175CB7 /* Main.storyboard */,
+				39CBF8EA293120D300175CB7 /* Extentions */,
+				39CBF8E32931126600175CB7 /* Helpers */,
+				39CBF8E1293110CF00175CB7 /* Screens */,
+				39CBF8E02931105400175CB7 /* App */,
 				39CBF8B92931058D00175CB7 /* Assets.xcassets */,
-				39CBF8BB2931058D00175CB7 /* LaunchScreen.storyboard */,
 				39CBF8BE2931058D00175CB7 /* Info.plist */,
 			);
 			path = "Test-FDJ-Clubs";
@@ -125,6 +128,65 @@
 				39CBF8D32931058E00175CB7 /* Test_FDJ_ClubsUITestsLaunchTests.swift */,
 			);
 			path = "Test-FDJ-ClubsUITests";
+			sourceTree = "<group>";
+		};
+		39CBF8E02931105400175CB7 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				39CBF8BB2931058D00175CB7 /* LaunchScreen.storyboard */,
+				39CBF8B02931058C00175CB7 /* AppDelegate.swift */,
+				39CBF8B22931058C00175CB7 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		39CBF8E1293110CF00175CB7 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				39CBF8E2293110EA00175CB7 /* Leagues */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		39CBF8E2293110EA00175CB7 /* Leagues */ = {
+			isa = PBXGroup;
+			children = (
+				39CBF8E729311BD800175CB7 /* ViewModel */,
+				39CBF8E629311BD000175CB7 /* UI */,
+			);
+			path = Leagues;
+			sourceTree = "<group>";
+		};
+		39CBF8E32931126600175CB7 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				39CBF8E42931127400175CB7 /* Constants.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		39CBF8E629311BD000175CB7 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				39CBF8B42931058C00175CB7 /* LeaguesViewController.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		39CBF8E729311BD800175CB7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				39CBF8E829311BF300175CB7 /* LeaguesViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		39CBF8EA293120D300175CB7 /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				39CBF8EB2931211300175CB7 /* UIView+ReuseIdentifier.swift */,
+			);
+			path = Extentions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,7 +295,6 @@
 			files = (
 				39CBF8BD2931058D00175CB7 /* LaunchScreen.storyboard in Resources */,
 				39CBF8BA2931058D00175CB7 /* Assets.xcassets in Resources */,
-				39CBF8B82931058C00175CB7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,9 +319,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39CBF8B52931058C00175CB7 /* ViewController.swift in Sources */,
+				39CBF8EC2931211300175CB7 /* UIView+ReuseIdentifier.swift in Sources */,
+				39CBF8B52931058C00175CB7 /* LeaguesViewController.swift in Sources */,
 				39CBF8B12931058C00175CB7 /* AppDelegate.swift in Sources */,
 				39CBF8B32931058C00175CB7 /* SceneDelegate.swift in Sources */,
+				39CBF8E929311BF300175CB7 /* LeaguesViewModel.swift in Sources */,
+				39CBF8E52931127400175CB7 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +361,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		39CBF8B62931058C00175CB7 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				39CBF8B72931058C00175CB7 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		39CBF8BB2931058D00175CB7 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -442,9 +498,9 @@
 				INFOPLIST_FILE = "Test-FDJ-Clubs/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -470,9 +526,9 @@
 				INFOPLIST_FILE = "Test-FDJ-Clubs/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
