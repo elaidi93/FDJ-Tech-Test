@@ -16,7 +16,11 @@ enum Constants {
 	enum urls {
 		static private let base = "https://www.thesportsdb.com/api/v1/json/50130162/"
 		static let leagues_url = "\(base)all_leagues.php"
-		static let teams_list = "s\(base)earch_all_teams.php?l=French%20Ligue%201"
+		static let teams_list = "\(base)search_all_teams.php?l="
 		static let team_details = "\(base)searchteams.php?t=Paris%20SG"
+	}
+	
+	enum Teams {
+		static let title = "Teams"
 	}
 }
