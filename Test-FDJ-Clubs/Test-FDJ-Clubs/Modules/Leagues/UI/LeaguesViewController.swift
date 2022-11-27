@@ -56,17 +56,29 @@ class LeaguesViewController: UITableViewController {
 
 extension LeaguesViewController {
 	
-	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return self.viewModel?.filtredList?.count ?? 10
+	override func tableView(_ tableView: UITableView,
+							numberOfRowsInSection section: Int) -> Int {
+		return self.viewModel?.filtredList?.count ?? 0
 	}
-	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+	
+	override func tableView(_ tableView: UITableView,
+							cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = UITableViewCell()
 		cell.textLabel?.text = self.viewModel?.filtredList?[indexPath.row].name
 		return cell
 	}
 	
-	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+	override func tableView(_ tableView: UITableView,
+							didSelectRowAt indexPath: IndexPath) {
 		tableView.deselectRow(at: indexPath, animated: true)
+		
+		guard let league = self.viewModel?.filtredList?[indexPath.row]
+		else { return }
+		
+		let teamsVC = TeamsCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout())
+		teamsVC.league = league
+		self.navigationController?.pushViewController(teamsVC,
+													  animated: true)
 	}
 }
 
@@ -75,7 +87,8 @@ extension LeaguesViewController {
 extension LeaguesViewController: UISearchResultsUpdating {
 	
 	func updateSearchResults(for searchController: UISearchController) {
-		guard let text = searchController.searchBar.text else { return }
+		guard let text = searchController.searchBar.text
+		else { return }
 		self.viewModel?.filterList(with: text)
 	}
 }
