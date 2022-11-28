@@ -23,7 +23,7 @@ class TeamCellViewModel: ObservableObject {
 	
 	func loadImage(from team: Team) {
 		Task {
-			guard let imageUrl = team.url
+			guard let imageUrl = team.logoUrl
 			else { return }
 			
 			switch try await requestManager?.fetchPhoto(url: imageUrl) {

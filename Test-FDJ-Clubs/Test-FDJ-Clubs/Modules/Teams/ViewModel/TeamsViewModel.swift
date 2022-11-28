@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-class TeamViewModel: ObservableObject {
+class TeamsViewModel: ObservableObject {
 	
 	@Published
 	var teams: [Team]?
@@ -23,7 +23,7 @@ class TeamViewModel: ObservableObject {
 	
 	func fetchTeams(from league: League) {
 		Task {
-			guard let route = self.getTeamRoute(from: league)
+			guard let route = self.getTeamsRoute(from: league)
 			else { return }
 			
 			try await requestManager?.get(Teams.self,
@@ -44,7 +44,7 @@ class TeamViewModel: ObservableObject {
 		}
 	}
 	
-	private func getTeamRoute(from league: League) -> String? {
+	private func getTeamsRoute(from league: League) -> String? {
 		guard let leagueName = league.name?.urlHost
 		else { return nil }
 		return Constants.urls.teams_list + leagueName
