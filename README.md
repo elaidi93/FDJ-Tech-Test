@@ -15,9 +15,9 @@ iOS developer technical Interview for FDJ
 ## Interface
 
 <p align="center">
-  <a href="https://github.com/elaidi93/PSA-Weather/blob/main/Readme_img/screen1.jpeg"><img alt="ios" src="https://github.com/elaidi93/PSA-Weather/blob/main/Readme_img/screen1.jpeg"/></a>
-    <a href="https://github.com/elaidi93/PSA-Weather/blob/main/Readme_img/screen2.jpeg"><img alt="ios" src="https://github.com/elaidi93/PSA-Weather/blob/main/Readme_img/screen2.jpeg"/></a>
-        <a href="https://github.com/elaidi93/PSA-Weather/blob/main/Readme_img/screen3.jpeg"><img alt="ios" src="https://github.com/elaidi93/PSA-Weather/blob/main/Readme_img/screen3.jpeg"/></a>
+  <a href="https://github.com/elaidi93/FDJ-Tech-Test/blob/develop/Readme_img/screen1.jpeg.jpeg"><img alt="ios" src="https://github.com/elaidi93/FDJ-Tech-Test/blob/develop/Readme_img/screen1.jpeg"/></a>
+    <a href="https://github.com/elaidi93/FDJ-Tech-Test/blob/develop/Readme_img/screen2.jpeg"><img alt="ios" src="https://github.com/elaidi93/FDJ-Tech-Test/blob/develop/Readme_img/screen2.jpeg"/></a>
+        <a href="https://github.com/elaidi93/FDJ-Tech-Test/blob/develop/Readme_img/screen3.jpeg"><img alt="ios" src="https://github.com/elaidi93/FDJ-Tech-Test/blob/develop/Readme_img/screen3.jpeg"/></a>
 </p>
 
 ## Architecture 
