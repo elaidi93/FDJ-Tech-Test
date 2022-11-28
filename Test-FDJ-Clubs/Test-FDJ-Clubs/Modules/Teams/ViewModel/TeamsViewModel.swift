@@ -12,7 +12,7 @@ class TeamsViewModel: ObservableObject {
 	
 	@Published
 	var teams: [Team]?
-	private var requestManager: RequestManager?
+	var requestManager: RequestManager?
 	
 	// MARK: - Init
 	required init() { }
@@ -23,7 +23,7 @@ class TeamsViewModel: ObservableObject {
 	
 	func fetchTeams(from league: League) {
 		Task {
-			guard let route = self.getTeamsRoute(from: league)
+			guard let route = self.getTeamsRoute(from: league.name)
 			else { return }
 			
 			try await requestManager?.get(Teams.self,
@@ -44,13 +44,14 @@ class TeamsViewModel: ObservableObject {
 		}
 	}
 	
-	private func getTeamsRoute(from league: League) -> String? {
-		guard let leagueName = league.name?.urlHost
+	func getTeamsRoute(from league: String?) -> String? {
+		guard let leagueName = league?.lowercased(),
+			  !leagueName.isEmpty
 		else { return nil }
 		return Constants.urls.teams_list + leagueName
 	}
 	
-	private func sorte(teams: [Team]) -> [Team] {
+	func sorte(teams: [Team]) -> [Team] {
 		let sortedTeams = teams.sorted(by: { team1, team2 in
 			guard let name1 = team1.name,
 				  let name2 = team2.name

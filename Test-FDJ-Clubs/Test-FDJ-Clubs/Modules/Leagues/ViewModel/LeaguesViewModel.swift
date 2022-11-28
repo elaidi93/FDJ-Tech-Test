@@ -12,8 +12,8 @@ class LeaguesViewModel: ObservableObject {
 	
 	@Published
 	var filtredList: [League]?
-	private var leagues: [League]?
-	private var requestManager: RequestManager?
+	var leagues: [League]?
+	var requestManager: RequestManager?
 	
 	init(manager: RequestManager) {
 		requestManager = manager

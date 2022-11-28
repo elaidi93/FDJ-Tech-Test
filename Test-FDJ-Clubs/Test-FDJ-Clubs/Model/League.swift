@@ -11,7 +11,7 @@ struct Leagues: Decodable {
 	let leagues: [League]?
 }
 
-struct League: Decodable {
+public struct League: Decodable {
 	let id: String?
 	let name: String?
 	let sport: String?
