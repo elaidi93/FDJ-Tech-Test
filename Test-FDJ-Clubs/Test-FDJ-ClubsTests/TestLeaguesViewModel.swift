@@ -14,19 +14,34 @@ import Combine
 final class TestLeaguesViewModel: XCTestCase {
 	
 	private var subscribers = Set<AnyCancellable>()
-	let leagueVM = LeaguesViewModel(manager: RequestManager())
+	private let leaguesVM = LeaguesViewModel(manager: RequestManager())
+	private let league = League(id: "1",
+								name: "League1 France",
+								sport: "Soccer",
+								leagueAlternate: "League1")
+	
+	func testTeam() {
+		XCTAssertEqual(league.id, "1")
+		XCTAssertEqual(league.name, "League1 France")
+		XCTAssertEqual(league.sport, "Soccer")
+		XCTAssertEqual(league.leagueAlternate, "League1")
+	}
 	
 	func testEmptyLeaguesList() {
-		XCTAssertNil(leagueVM.leagues)
+		XCTAssertNil(leaguesVM.leagues)
+	}
+	
+	func testRequestManagerNil() {
+		XCTAssertNotNil(leaguesVM.requestManager)
 	}
 	
 	func testGetLeagues() throws {
 		
-		leagueVM.objectWillChange
+		leaguesVM.objectWillChange
 			.receive(on: DispatchQueue.main)
 			.sink(receiveValue: { _ in
 				do {
-					let leagues = try XCTUnwrap(self.leagueVM.leagues)
+					let leagues = try XCTUnwrap(self.leaguesVM.leagues)
 					XCTAssertTrue(leagues.count > 0)
 				} catch {
 					XCTFail("error")
@@ -36,15 +51,20 @@ final class TestLeaguesViewModel: XCTestCase {
 	}
 	
 	func testFiltredLeaguesList() {
-		leagueVM.objectWillChange
+		leaguesVM.objectWillChange
 			.receive(on: DispatchQueue.main)
 			.sink(receiveValue: { _ in
 				do {
-					self.leagueVM.filterList(with: "league1")
-					let filtredList = try XCTUnwrap(self.leagueVM.filtredList)
+					self.leaguesVM.filterList(with: "league1")
+					let filtredList = try XCTUnwrap(self.leaguesVM.filtredList)
+					
 					XCTAssertTrue(filtredList.count > 0)
+					
 					let exist = try XCTUnwrap(filtredList.first?.name?.contains("league1"))
+					let notExist = try XCTUnwrap(filtredList.first?.name?.contains("Premier League"))
+					
 					XCTAssertTrue(exist)
+					XCTAssertFalse(notExist)
 				} catch {
 					XCTFail("error")
 				}

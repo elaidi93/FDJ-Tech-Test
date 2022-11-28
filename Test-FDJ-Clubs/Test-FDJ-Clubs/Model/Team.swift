@@ -11,7 +11,7 @@ struct Teams: Decodable {
 	let teams: [Team]?
 }
 
-struct Team: Decodable {
+public struct Team: Decodable, Equatable {
 	
 	let id: String?
 	let logoUrl: String?
