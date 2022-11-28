@@ -45,7 +45,7 @@ class TeamsViewModel: ObservableObject {
 	}
 	
 	func getTeamsRoute(from league: String?) -> String? {
-		guard let leagueName = league?.lowercased(),
+		guard let leagueName = league?.lowercased().urlHost,
 			  !leagueName.isEmpty
 		else { return nil }
 		return Constants.urls.teams_list + leagueName

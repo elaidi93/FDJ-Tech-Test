@@ -57,9 +57,14 @@ final class TestTeamsViewModel: XCTestCase {
 	
 	func testRoute() {
 		do {
-			let route = try XCTUnwrap(teamsVM.getTeamsRoute(from: "League1"))
-			XCTAssertNotEqual(route, Constants.urls.teams_list + "League1")
-			XCTAssertEqual(route, Constants.urls.teams_list + "league1")
+			let route1 = try XCTUnwrap(teamsVM.getTeamsRoute(from: "League1"))
+			XCTAssertNotEqual(route1, Constants.urls.teams_list + "League1")
+			XCTAssertEqual(route1, Constants.urls.teams_list + "league1")
+			
+			let route2 = try XCTUnwrap(teamsVM.getTeamsRoute(from: "Premier League"))
+			XCTAssertNotEqual(route2, Constants.urls.teams_list + "Premier League")
+			let team = try XCTUnwrap("premier league".urlHost)
+			XCTAssertEqual(route2, Constants.urls.teams_list + team)
 		} catch {
 			XCTFail("error")
 		}
