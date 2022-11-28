@@ -7,11 +7,12 @@
 
 import UIKit
 import Combine
+import SwiftUI
 
 class TeamsCollectionViewController: UICollectionViewController {
 	
 	var league: League?
-	private var viewModel: TeamViewModel = TeamViewModel(manager: RequestManager())
+	private var viewModel: TeamsViewModel = TeamsViewModel(manager: RequestManager())
 	private var subscribers = Set<AnyCancellable>()
 	
 	private let itemsPerRow: CGFloat = 2
@@ -59,6 +60,15 @@ extension TeamsCollectionViewController {
 		
 		return cell
 	}
+	
+	override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		collectionView.deselectItem(at: indexPath, animated: true)
+		guard let team = self.viewModel.teams?[indexPath.row]
+		else { return }
+		self.navigationController?.pushViewController(UIHostingController(rootView: TeamView(viewModel: TeamViewModel(team: team,
+																													  requestManager: RequestManager()))),
+													  animated: true)
+	}
 }
 
 extension TeamsCollectionViewController: UICollectionViewDelegateFlowLayout {
@@ -71,6 +81,7 @@ extension TeamsCollectionViewController: UICollectionViewDelegateFlowLayout {
 		let availableWidth = view.frame.width - paddingSpace
 		let widthPerItem = availableWidth / itemsPerRow
 		
-		return CGSize(width: widthPerItem, height: widthPerItem)
+		return CGSize(width: widthPerItem,
+					  height: widthPerItem)
 	}
 }

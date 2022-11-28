@@ -26,6 +26,8 @@
 		39CBF9072931867100175CB7 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CBF9062931867100175CB7 /* Team.swift */; };
 		39CBF90929323A9500175CB7 /* String+Encode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CBF90829323A9500175CB7 /* String+Encode.swift */; };
 		39CBF9112932EA2C00175CB7 /* TeamCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CBF9102932EA2C00175CB7 /* TeamCellViewModel.swift */; };
+		39CBF914293431D400175CB7 /* TeamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CBF913293431D400175CB7 /* TeamView.swift */; };
+		39FF093529343D2900EAC9A0 /* TeamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FF093429343D2900EAC9A0 /* TeamViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		39CBF9062931867100175CB7 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		39CBF90829323A9500175CB7 /* String+Encode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Encode.swift"; sourceTree = "<group>"; };
 		39CBF9102932EA2C00175CB7 /* TeamCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamCellViewModel.swift; sourceTree = "<group>"; };
+		39CBF913293431D400175CB7 /* TeamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamView.swift; sourceTree = "<group>"; };
+		39FF093429343D2900EAC9A0 /* TeamViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +165,7 @@
 		39CBF8E1293110CF00175CB7 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				39CBF912293431BE00175CB7 /* Team */,
 				39CBF8FB2931840E00175CB7 /* Teams */,
 				39CBF8E2293110EA00175CB7 /* Leagues */,
 			);
@@ -273,6 +278,31 @@
 			isa = PBXGroup;
 			children = (
 				39CBF9102932EA2C00175CB7 /* TeamCellViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		39CBF912293431BE00175CB7 /* Team */ = {
+			isa = PBXGroup;
+			children = (
+				39FF093329343D1900EAC9A0 /* ViewModel */,
+				39FF093229343D1300EAC9A0 /* UI */,
+			);
+			path = Team;
+			sourceTree = "<group>";
+		};
+		39FF093229343D1300EAC9A0 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				39CBF913293431D400175CB7 /* TeamView.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		39FF093329343D1900EAC9A0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				39FF093429343D2900EAC9A0 /* TeamViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -408,7 +438,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				39CBF9072931867100175CB7 /* Team.swift in Sources */,
+				39FF093529343D2900EAC9A0 /* TeamViewModel.swift in Sources */,
 				39CBF8EC2931211300175CB7 /* UIView+ReuseIdentifier.swift in Sources */,
+				39CBF914293431D400175CB7 /* TeamView.swift in Sources */,
 				39CBF905293185AF00175CB7 /* TeamsViewModel.swift in Sources */,
 				39CBF90929323A9500175CB7 /* String+Encode.swift in Sources */,
 				39CBF8B52931058C00175CB7 /* LeaguesViewController.swift in Sources */,
