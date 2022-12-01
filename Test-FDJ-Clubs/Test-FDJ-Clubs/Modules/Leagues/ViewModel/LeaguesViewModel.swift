@@ -21,18 +21,15 @@ class LeaguesViewModel: ObservableObject {
 	
 	func getLeagues() {
 		Task {
-			try await requestManager?.get(Leagues.self,
-								route: Constants.urls.leagues_url) {
-				result in
-				
-				DispatchQueue.main.async {
-					switch result {
-					case .success(let leagues):
-						self.leagues = leagues.leagues
-					case .failure(let error):
-						print(error)
-					}
-				}
+			guard let result = await requestManager?.get(Leagues.self,
+														 route: Constants.urls.leagues_url)
+			else { return }
+			
+			switch result {
+			case .success(let leagues):
+				self.leagues = leagues.leagues
+			case .failure(let error):
+				print(error)
 			}
 		}
 	}
