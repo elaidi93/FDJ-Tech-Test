@@ -23,16 +23,11 @@ class TeamCellViewModel: ObservableObject {
 	
 	func loadImage(from team: Team) {
 		Task {
-			guard let imageUrl = team.logoUrl
+			guard let imageUrl = team.logoUrl,
+				  let image = try await requestManager?.fetchPhoto(url: imageUrl)
 			else { return }
 			
-			switch try await requestManager?.fetchPhoto(url: imageUrl) {
-			case .success(let image):
-				self.image = image
-			case .failure(let error):
-				print(error)
-			default: break
-			}
+			self.image = image
 		}
 	}
 	

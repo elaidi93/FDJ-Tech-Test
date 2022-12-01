@@ -6,48 +6,38 @@
 //
 
 import SwiftUI
-import Combine
 
 struct TeamView: View {
 	
-	var viewModel: TeamViewModel?
-	@State private var image: UIImage? = UIImage()
-	@State private var subscribers = Set<AnyCancellable>()
-	
-	init(viewModel: TeamViewModel? = nil) {
-		self.viewModel = viewModel
-		self.viewModel?.loadImage()
-	}
+	var team: Team?
 
     var body: some View {
 		NavigationView {
 			ScrollView(.vertical){
 				VStack(alignment: .leading, spacing: 10) {
-					if let banner = self.viewModel?.banner {
-						Image(uiImage: banner)
-							.resizable()
-							.aspectRatio(contentMode: .fit)
-							.onAppear {
-								viewModel?.objectWillChange
-									.receive(on: DispatchQueue.main)
-									.sink(receiveValue: { _ in
-										image = viewModel?.banner ?? nil
-									}).store(in: &self.subscribers)
-							}
+					
+					if let url = URL(string: team?.banner ?? "") {
+						AsyncImage(url: url) { banner in
+							banner
+								.resizable()
+								.scaledToFit()
+						} placeholder: {
+							Color.blue
+						}
 					}
 					
-					Text(viewModel?.team?.country ?? "")
+					Text(team?.country ?? "")
 						.font(.system(size: 12))
 					
-					Text(viewModel?.team?.league ?? "")
+					Text(team?.league ?? "")
 						.font(.system(size: 14).bold())
 					
-					Text(viewModel?.team?.description ?? "")
+					Text(team?.description ?? "")
 						.font(.system(size: 14))
 				}.padding()
 			}
 		}
-		.navigationTitle(self.viewModel?.team?.name ?? "")
+		.navigationTitle(team?.name ?? "")
 		.navigationBarTitleDisplayMode(.large)
     }
 }

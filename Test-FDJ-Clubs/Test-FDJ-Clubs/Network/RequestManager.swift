@@ -18,34 +18,34 @@ enum NetworkError: Error {
 
 class RequestManager {
 	
-	func get<T>(_ type: T.Type, route: String, callback: ((Result<T, Error>) -> Void)?) async throws where T: Decodable {
+	func get<T: Decodable>(_ type: T.Type, route: String) async -> Result<T, Error> {
 		
 		guard let url = URL(string: route) else {
-			callback?(Result.failure(NetworkError.badUrl))
-			return
+			return .failure(NetworkError.badUrl)
 		}
 		
 		do {
-			let model = try JSONDecoder().decode(type, from: try await request(url))
-			callback?(.success(model))
+			let model = try JSONDecoder().decode(type,
+												 from: try await request(url))
+			return .success(model)
 		} catch {
 			print(error)
-			callback?(.failure(NetworkError.serialization))
+			return .failure(NetworkError.serialization)
 		}
 	}
 	
 	// Load Image
-	func fetchPhoto(url: String) async throws -> Result<UIImage, Error> {
+	func fetchPhoto(url: String) async throws -> UIImage {
 		
 		guard let url = URL(string: url) else {
-			return Result.failure(NetworkError.badUrl)
+			throw NetworkError.badUrl
 		}
 		
 		guard let image = UIImage(data: try await request(url)) else {
 			throw NetworkError.serialization
 		}
 		
-		return .success(image)
+		return image
 	}
 	
 	// request

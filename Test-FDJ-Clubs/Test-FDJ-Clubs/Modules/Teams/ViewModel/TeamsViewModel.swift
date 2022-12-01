@@ -23,23 +23,20 @@ class TeamsViewModel: ObservableObject {
 	
 	func fetchTeams(from league: League) {
 		Task {
-			guard let route = self.getTeamsRoute(from: league.name)
+			guard let route = self.getTeamsRoute(from: league.name),
+				  let result = await requestManager?.get(Teams.self,
+														 route: route)
 			else { return }
 			
-			try await requestManager?.get(Teams.self,
-										  route: route) {
-				[weak self] result in
+			switch result {
+			case .success(let teams):
+				guard let teams = teams.teams
+				else { return }
 				
-				switch result {
-				case .success(let teams):
-					guard let teams = teams.teams
-					else { return }
-					
-					self?.teams = self?.sorte(teams: teams)
-					
-				case .failure(let error):
-					print(error)
-				}
+				self.teams = self.sorte(teams: teams)
+				
+			case .failure(let error):
+				print(error)
 			}
 		}
 	}

@@ -65,9 +65,7 @@ extension TeamsCollectionViewController {
 		collectionView.deselectItem(at: indexPath, animated: true)
 		guard let team = self.viewModel.teams?[indexPath.row]
 		else { return }
-		self.navigationController?.pushViewController(UIHostingController(rootView: TeamView(viewModel: TeamViewModel(team: team,
-																													  requestManager: RequestManager()))),
-													  animated: true)
+		self.navigationController?.pushViewController(UIHostingController(rootView: TeamView(team: team)), animated: true)
 	}
 }
 

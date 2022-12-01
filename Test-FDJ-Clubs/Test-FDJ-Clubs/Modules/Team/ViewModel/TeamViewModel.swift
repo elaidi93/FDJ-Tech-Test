@@ -12,6 +12,7 @@ class TeamViewModel: ObservableObject {
 	
 	@Published
 	var banner: UIImage?
+	
 	var team: Team?
 	private var requestManager: RequestManager?
 	
@@ -22,16 +23,12 @@ class TeamViewModel: ObservableObject {
 	
 	func loadImage() {
 		Task {
-			guard let imageUrl = team?.banner
+			guard let imageUrl = team?.banner,
+				  let image = try await requestManager?.fetchPhoto(url: imageUrl)
 			else { return }
 			
-			switch try await requestManager?.fetchPhoto(url: imageUrl) {
-			case .success(let image):
-				self.banner = image
-			case .failure(let error):
-				print(error)
-			default: break
-			}
+			self.banner = image
+			
 		}
 	}
 }
